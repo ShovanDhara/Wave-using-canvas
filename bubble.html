@@ -1,0 +1,71 @@
+
+<html>
+  <head>
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+
+     body{
+      background:#2897CF;
+      overflow:hidden;
+      margin:0;
+     }
+
+    .example-img-wrap{
+      position:absolute;
+      top:50%;
+      left:50%;
+      width:245px;
+      height:326px;
+      margin-left:-127px;
+      margin-top:-163px;
+    }
+
+    #bubbles, #bubbles-top{
+      position:absolute;
+      pointer-events:none;
+    }
+
+    img{
+      max-width:100%;
+    }
+
+
+  </style>
+  </head>
+  <body>
+
+    <div id="bubbles"></div>
+    <div class="example-img-wrap"><img class="example-img" src="asset/example.png" alt=""></div>
+    <div id="bubbles-top"></div>
+
+    <script src="asset/jquery.js"></script>
+    <script src="asset/jquery.bubbles.canvas.js"></script>
+    <script>
+
+      $(document).ready(function(){
+
+        $('#bubbles').bubbles({
+          bubbleCount: 100
+        });
+
+        $('#bubbles-top').bubbles({
+          bubbleCount: 20,
+          baseDuration:50,
+          minDiam: 15,
+          maxDiam: 80,
+          blur: true
+        });
+
+        $('#bubbles').startBubbleAnimation();
+        $('#bubbles-top').startBubbleAnimation();
+
+      });
+
+
+    </script>
+
+
+  </body>
+</html>
